@@ -28,7 +28,6 @@ const f1 = () => {
         <title>Введение | YtYt - понятные уроки программирования</title>
         <link rel="shortcut icon" href="/title.png" type="image/x-icon" />
       </Head>
-      {/* <AceEditor data={data} dataState={setData} /> */}
       <Header />
       <div className={styles.lesson}>
         <div className={styles.container}>

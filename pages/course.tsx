@@ -12,7 +12,7 @@ const course = () => {
         <link rel="shortcut icon" href="/title.png" type="image/x-icon" />
       </Head>
       <div className={styles.course}>
-        <Header />
+        <Header/>
         <div className={styles.lessons}>
           <div className={styles.container}>
             <div className={styles.lessonWrapper}>

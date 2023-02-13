@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 
+// @ts-ignore
 import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-one_dark";
 import "ace-builds/src-noconflict/ext-language_tools";
-import ReactAce from "react-ace/lib/ace";
 
 import styles from "../../styles/editor.module.css";
 
@@ -16,8 +16,7 @@ export interface Ace {
 }
 
 const CodeEditor: React.FC<Ace> = ({ dataState, data, value }: Ace) => {
-  const [output, setOutput] = useState<string>("")
-
+  const [output, setOutput] = useState<any>()
   return (
     <div className={styles.codeWrapper}>
       <AceEditor
@@ -37,14 +36,17 @@ const CodeEditor: React.FC<Ace> = ({ dataState, data, value }: Ace) => {
       <button
         onClick={() => {
           // setOutput(dataState)
-          console.log(Function(value)());
+          try {
+            Function(data ? data : value)();
+          } catch (err) {
+           console.log(err); 
+          }         
         }}
         type="submit"
       >
         Run
       </button>
-      <p>{output}
-      </p>
+      <p>{output}</p>
      
     </div>
   );

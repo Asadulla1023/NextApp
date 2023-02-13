@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../../styles/Header.module.css";
 
 const Header = () => {
+  // console.log(sex);
   return (
     <div className={styles.header}>
       <div className={styles.container}>
